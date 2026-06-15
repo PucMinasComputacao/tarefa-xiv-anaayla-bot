@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Trilhas & Serras</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .dash-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #e0e0e0;
+      margin-bottom: 24px;
+    }
+    .dash-card h5 {
+      font-weight: 700;
+      color: #2e7d32;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .stat-box {
+      background: #f1f8e9;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-box .num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2e7d32;
+    }
+    .stat-box .lbl {
+      font-size: 0.78rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+    #map {
+      width: 100%;
+      height: 420px;
+      border-radius: 12px;
+      z-index: 0;
+    }
+    .chart-wrap {
+      position: relative;
+      height: 300px;
+    }
+    .loading-dash {
+      text-align: center;
+      padding: 80px 0;
+      color: #666;
+    }
+    .legenda-mapa {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .legenda-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: #555;
+    }
+    .legenda-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <div class="container my-5">
+
+    <div class="mb-4">
+      <h1 class="fw-bold" style="color:#2e7d32;">📊 Dashboard — Trilhas & Serras</h1>
+      <p class="text-muted">Visualização de dados dos destinos cadastrados</p>
+    </div>
+
+    <div id="dash-content">
+      <div class="loading-dash">
+        <div class="spinner-border text-success" role="status"></div>
+        <p class="mt-3">Carregando dados...</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer id="contato" class="bg-success text-white text-center py-3 mt-5">
+    <p class="mb-0">© 2026 Trilhas & Serras do Brasil | Ana Ayla Pires Reis</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+  <script>
+    const coordenadas = {
+      1:  { lat: -22.35, lng: -44.80 },
+      2:  { lat: -20.43, lng: -41.79 },
+      3:  { lat: -23.40, lng: -45.07 },
+      4:  { lat: -19.37, lng: -43.60 },
+      5:  { lat: -12.45, lng: -41.37 },
+      6:  { lat: -29.10, lng: -51.10 },
+      7:  { lat: -14.10, lng: -47.60 },
+      8:  { lat: -13.00, lng: -52.30 },
+      9:  { lat: -22.68, lng: -44.84 },
+      10: { lat: -20.43, lng: -41.80 },
+      11: { lat: -20.27, lng: -46.60 },
+      12: { lat: -18.38, lng: -43.42 }
+    };
+
+    const COR_DIFICULDADE = {
+      "Fácil":            "#4caf50",
+      "Moderada":         "#ff9800",
+      "Difícil":          "#f44336",
+      "Fácil a Moderada": "#29b6f6"
+    };
+
+    const CORES_CAT = [
+      "#2e7d32","#4caf50","#81c784","#ff9800","#29b6f6","#ab47bc","#ef5350","#26a69a"
+    ];
+
+    async function renderDashboard() {
+      const container = document.getElementById("dash-content");
+
+      let destinos = [], avaliacoes = [];
+      try {
+        [destinos, avaliacoes] = await Promise.all([
+          fetch("http://localhost:3000/destinos").then(r => r.json()),
+          fetch("http://localhost:3000/avaliacoes").then(r => r.json())
+        ]);
+      } catch(e) {
+        container.innerHTML = `
+          <div class="text-center py-5">
+            <h5 class="text-danger">⚠️ Não foi possível carregar os dados.</h5>
+            <p class="text-muted">Verifique se o JSON Server está rodando em <code>http://localhost:3000</code>.</p>
+          </div>`;
+        return;
+      }
+
+      const totalDestinos   = destinos.length;
+      const totalAvaliacoes = avaliacoes.length;
+      const notaMedia = avaliacoes.length
+        ? (avaliacoes.reduce((s,a) => s + a.nota, 0) / avaliacoes.length).toFixed(1)
+        : "—";
+      const destaques = destinos.filter(d => d.destaque).length;
+
+      const porCategoria = {};
+      destinos.forEach(d => {
+        porCategoria[d.categoria] = (porCategoria[d.categoria] || 0) + 1;
+      });
+
+      const porDificuldade = {};
+      destinos.forEach(d => {
+        porDificuldade[d.dificuldade] = (porDificuldade[d.dificuldade] || 0) + 1;
+      });
+
+      const mediasPorDestino = {};
+      avaliacoes.forEach(a => {
+        if (!mediasPorDestino[a.destinoId]) mediasPorDestino[a.destinoId] = [];
+        mediasPorDestino[a.destinoId].push(a.nota);
+      });
+      const destinosAvaliados = Object.keys(mediasPorDestino).map(id => {
+        const dest = destinos.find(d => d.id === parseInt(id));
+        const notas = mediasPorDestino[id];
+        return {
+          nome: dest ? dest.nome : "Desconhecido",
+          media: (notas.reduce((s,n) => s+n, 0) / notas.length).toFixed(1)
+        };
+      });
+
+      container.innerHTML = `
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-md-3"><div class="stat-box"><div class="num">${totalDestinos}</div><div class="lbl">Destinos</div></div></div>
+          <div class="col-6 col-md-3"><div class="stat-box"><div class="num">${destaques}</div><div class="lbl">Destaques</div></div></div>
+          <div class="col-6 col-md-3"><div class="stat-box"><div class="num">${totalAvaliacoes}</div><div class="lbl">Avaliações</div></div></div>
+          <div class="col-6 col-md-3"><div class="stat-box"><div class="num">${notaMedia} ⭐</div><div class="lbl">Nota média</div></div></div>
+        </div>
+
+        <div class="dash-card">
+          <h5>🗺️ Mapa interativo dos destinos</h5>
+          <div id="map"></div>
+          <div class="legenda-mapa mt-3">
+            <div class="legenda-item"><span class="legenda-dot" style="background:#4caf50;"></span> Fácil</div>
+            <div class="legenda-item"><span class="legenda-dot" style="background:#29b6f6;"></span> Fácil a Moderada</div>
+            <div class="legenda-item"><span class="legenda-dot" style="background:#ff9800;"></span> Moderada</div>
+            <div class="legenda-item"><span class="legenda-dot" style="background:#f44336;"></span> Difícil</div>
+          </div>
+          <p class="text-muted small mt-2 mb-0">Clique em um marcador para ver detalhes do destino.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <div class="dash-card h-100">
+              <h5>📂 Destinos por categoria</h5>
+              <div class="chart-wrap"><canvas id="chartCategoria"></canvas></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="dash-card h-100">
+              <h5>🥾 Destinos por dificuldade</h5>
+              <div class="chart-wrap"><canvas id="chartDificuldade"></canvas></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-card mt-4">
+          <h5>⭐ Avaliação média por destino</h5>
+          <div class="chart-wrap"><canvas id="chartAvaliacoes"></canvas></div>
+        </div>
+      `;
+
+     
+      const map = L.map("map").setView([-15.0, -48.0], 4);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+      destinos.forEach(d => {
+        const coord = coordenadas[d.id];
+        if (!coord) return;
+        const cor = COR_DIFICULDADE[d.dificuldade] || "#2e7d32";
+
+        const icone = L.divIcon({
+          className: "",
+          html: `<div style="
+            width:16px;height:16px;
+            background:${cor};
+            border:3px solid #fff;
+            border-radius:50%;
+            box-shadow:0 1px 5px rgba(0,0,0,0.35);
+          "></div>`,
+          iconSize: [16, 16],
+          iconAnchor: [8, 8]
+        });
+
+        L.marker([coord.lat, coord.lng], { icon: icone })
+          .addTo(map)
+          .bindPopup(`
+            <strong>${d.nome}</strong><br>
+            <span style="color:#555;font-size:12px;">📍 ${d.estado} &nbsp;⛰️ ${d.altitude}</span><br>
+            <span style="font-size:12px;">🥾 ${d.dificuldade} &nbsp;🕐 ${d.duracao}</span><br>
+            <a href="detalhes.html?id=${d.id}" style="color:#2e7d32;font-size:12px;font-weight:600;">Ver detalhes →</a>
+          `);
+      });
+
+     
+      new Chart(document.getElementById("chartCategoria"), {
+        type: "doughnut",
+        data: {
+          labels: Object.keys(porCategoria),
+          datasets: [{
+            data: Object.values(porCategoria),
+            backgroundColor: CORES_CAT.slice(0, Object.keys(porCategoria).length),
+            borderWidth: 2,
+            borderColor: "#fff"
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: "bottom", labels: { font: { size: 12 }, padding: 16 } }
+          }
+        }
+      });
+
+      
+      const difLabels = Object.keys(porDificuldade);
+      new Chart(document.getElementById("chartDificuldade"), {
+        type: "bar",
+        data: {
+          labels: difLabels,
+          datasets: [{
+            label: "Destinos",
+            data: Object.values(porDificuldade),
+            backgroundColor: difLabels.map(d => COR_DIFICULDADE[d] || "#aaa"),
+            borderRadius: 8,
+            borderSkipped: false
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: { beginAtZero: true, ticks: { stepSize: 1 }, grid: { color: "#f0f0f0" } },
+            x: { grid: { display: false } }
+          }
+        }
+      });
+
+      
+      new Chart(document.getElementById("chartAvaliacoes"), {
+        type: "bar",
+        data: {
+          labels: destinosAvaliados.map(d => d.nome),
+          datasets: [{
+            label: "Nota média",
+            data: destinosAvaliados.map(d => parseFloat(d.media)),
+            backgroundColor: "#4caf50",
+            borderRadius: 8,
+            borderSkipped: false
+          }]
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { min: 0, max: 5, ticks: { stepSize: 1 }, grid: { color: "#f0f0f0" } },
+            y: { grid: { display: false } }
+          }
+        }
+      });
+    }
+
+    renderDashboard();
+  </script>
+</body>
+</html>

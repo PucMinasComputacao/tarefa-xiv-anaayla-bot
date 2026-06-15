@@ -1,0 +1,279 @@
+{
+  "destinos": [
+    {
+      "id": 1,
+      "nome": "Serra da Mantiqueira",
+      "estado": "MG / SP / RJ",
+      "dificuldade": "Moderada",
+      "altitude": "2.798 m",
+      "distancia": "16,4 km de BH",
+      "duracao": "2 a 5 dias",
+      "melhorEpoca": "Abril a Outubro",
+      "categoria": "Montanha",
+      "descricaoCurta": "Uma das mais extensas e belas serras do Brasil, percorrendo três estados.",
+      "descricaoCompleta": "Uma das mais extensas e belas serras do Brasil, a Mantiqueira percorre três estados e abriga o Pico das Agulhas Negras. Ideal para trilhas de múltiplos dias com vistas panorâmicas espetaculares.",
+      "imagem": "https://magazine.zarpo.com.br/wp-content/uploads/2018/09/10-cidades-imperdiveis-para-conhecer-na-serra-da-mantiqueira-2-770x500.jpg",
+      "tags": ["montanha", "trekking", "multi-dias", "pico", "natureza"],
+      "destaque": true,
+      "fotos": [
+        { "titulo": "Vista ao amanhecer", "url": "https://magazine.zarpo.com.br/wp-content/uploads/2026/03/capa-Foto-Mag-Serra-da-Mantiqueira.jpg" },
+        { "titulo": "Trilha entre pinheiros", "url": "https://blog.sommohotel.com.br/content/images/2023/12/trilha-do-Pinheiro-Velho.jpg" },
+        { "titulo": "Neblina nas montanhas", "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUQE7vGsZ3iRY7ZFaDAL_ngiZQcc86kYMvM-Z3G3mmnxr3s2WmqWljZkfDasJC9Jh3VVPpsP8AVF3qgraRvnVBQgNZmtgoQ8GmSTO-xlavnlwO1pY126q2Hin2802f5FfHakVXZR_Bibw/w1200-h630-p-k-no-nu/Mantiqueira+-+neblina+na+serra.JPG" }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Pico da Bandeira",
+      "estado": "MG / ES",
+      "dificuldade": "Difícil",
+      "altitude": "2.892 m",
+      "distancia": "330 km de BH",
+      "duracao": "1 a 2 dias",
+      "melhorEpoca": "Maio a Setembro",
+      "categoria": "Montanha",
+      "descricaoCurta": "Terceiro ponto mais alto do Brasil, com trilha desafiadora e vista inesquecível.",
+      "descricaoCompleta": "Terceiro ponto mais alto do Brasil, o Pico da Bandeira oferece uma das trilhas mais desafiadoras e recompensadoras do país. A vista do cume é absolutamente inesquecível.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Pico_da_Bandeira_vista_MG.jpg",
+      "tags": ["pico", "altitude", "desafio", "cume", "aventura"],
+      "destaque": true,
+      "fotos": [
+        { "titulo": "Cume do Pico da Bandeira", "url": "https://blog.blablacar.com.br/wp-content/uploads/2024/12/pico-da-bandeira-mg-1-1.webp" },
+        { "titulo": "Campos de altitude", "url": "https://i0.wp.com/vemprocaparao.com.br/wp-content/uploads/2022/02/Pico-da-Bandeira-Capa-VPC-Serra-do-Caparao-MG-Vem-Pro-Caparao-scaled.jpg" },
+        { "titulo": "Subida íngreme", "url": "https://trilhandomontanhas.com/arquivos/2017-08/pico-da-bandeira-parque-nacional-do-alto-caparao-es-e-mg-media.jpg" }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Serra do Mar",
+      "estado": "SP / PR / SC / RJ",
+      "dificuldade": "Fácil a Moderada",
+      "altitude": "1.200 m",
+      "distancia": "1.075 km de SP",
+      "duracao": "1 dia",
+      "melhorEpoca": "Março a Novembro",
+      "categoria": "Litoral",
+      "descricaoCurta": "Rica em Mata Atlântica, cachoeiras e biodiversidade ao longo de 1.000 km de litoral.",
+      "descricaoCompleta": "Percorrendo o litoral brasileiro por mais de 1.000 km, a Serra do Mar é rica em Mata Atlântica, cachoeiras e biodiversidade. Um paraíso para quem gosta de natureza exuberante.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/9/98/Nascer_do_Sol_no_Dedo_de_Deus.jpg",
+      "tags": ["litoral", "mata atlântica", "cachoeira", "biodiversidade", "natureza"],
+      "destaque": false,
+      "fotos": [
+        { "titulo": "Mata Atlântica densa", "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Serra_do_mar_%28Ubatuba%29_5.jpg" },
+        { "titulo": "Cachoeira na serra", "url": "https://desviantes.blob.core.windows.net/desviantes/media/adventures/items/b6e3334c2540a7b711e7b6682a51ea6c.jpg" },
+        { "titulo": "Vista para o litoral", "url": "https://s1.static.brasilescola.uol.com.br/be/2023/04/vista-panoramica-de-morros-e-serras-no-litoral-de-paraty-uma-das-cidades-brasileiras-por-onde-se-estende-a-serra-do-mar.jpg" }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "Serra do Cipó",
+      "estado": "MG",
+      "dificuldade": "Fácil",
+      "altitude": "1.436 m",
+      "distancia": "100 km de BH",
+      "duracao": "1 a 3 dias",
+      "melhorEpoca": "Abril a Setembro",
+      "categoria": "Parque Nacional",
+      "descricaoCurta": "Campos rupestres únicos, cachoeiras cristalinas e flores endêmicas perto de BH.",
+      "descricaoCompleta": "Parque Nacional com campos rupestres únicos, cachoeiras cristalinas e flores endêmicas. A Serra do Cipó é destino certo para quem busca contato com a natureza mineira sem abrir mão do conforto.",
+      "imagem": "https://portalserradocipo.com.br/wp-content/uploads/2021/01/cachoeiras-serra-do-cipo-960x480.jpg",
+      "tags": ["parque nacional", "cachoeira", "campos rupestres", "flores", "ecoturismo"],
+      "destaque": true,
+      "fotos": [
+        { "titulo": "Cachoeira da Farofa", "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVWQ6kiodY5GNxQUFeocdMYNcd1ijnPB0DLg&s" },
+        { "titulo": "Campos rupestres floridos", "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJh8-_fcVUxrOGMY9XK995kM93lhz3-MMoBg&s" },
+        { "titulo": "Rio Cipó ao entardecer", "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkiypcqLULwlKoWLFTQRyg_LO7FMyJqI5e6g&s" }
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "Chapada Diamantina",
+      "estado": "BA",
+      "dificuldade": "Moderada",
+      "altitude": "1.692 m",
+      "distancia": "425 km de Salvador",
+      "duracao": "3 a 7 dias",
+      "melhorEpoca": "Maio a Outubro",
+      "categoria": "Chapada",
+      "descricaoCurta": "Ecoturismo completo com cachoeiras, cavernas e rios subterrâneos na Bahia.",
+      "descricaoCompleta": "Um dos destinos de ecoturismo mais completos do Brasil, com cachoeiras, cavernas, rios subterrâneos e trilhas que atravessam paisagens de tirar o fôlego na Bahia.",
+      "imagem": "https://www.melhoresdestinos.com.br/wp-content/uploads/2019/10/chapada-diamantina.jpg",
+      "tags": ["chapada", "caverna", "cachoeira", "ecoturismo", "multi-dias"],
+      "destaque": true,
+      "fotos": [
+        { "titulo": "Poço Azul", "url": "https://www.guiachapadadiamantina.com.br/wp-content/uploads/2024/03/poco-azul.jpg" },
+        { "titulo": "Cachoeira do Buracão", "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3b/4a/84/img-20161106-193140-largejpg.jpg?w=1200&h=-1&s=1" },
+        { "titulo": "Morro do Pai Inácio", "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/f4/6d/15/photo1jpg.jpg?w=900&h=-1&s=1" }
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "Serra Gaúcha",
+      "estado": "RS",
+      "dificuldade": "Fácil",
+      "altitude": "900 m",
+      "distancia": "130 km de Porto Alegre",
+      "duracao": "2 a 4 dias",
+      "melhorEpoca": "Todo o ano",
+      "categoria": "Vale",
+      "descricaoCurta": "Natureza, gastronomia italiana e vinhos incríveis em Gramado e Canela.",
+      "descricaoCompleta": "Com influência italiana e alemã, a Serra Gaúcha combina natureza exuberante com gastronomia e vinhos incríveis. Gramado, Canela e Nova Petrópolis são as joias da região.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Caracol_falls_%282_April_2008%29.jpg",
+      "tags": ["vale", "vinhos", "gastronomia", "cânion", "cultura"],
+      "destaque": false,
+      "fotos": [
+        { "titulo": "Cânion do Itaimbezinho", "url": "https://www.viagensecaminhos.com/wp-content/uploads/2012/01/canion-itaimbezinho-mirante-cotovelo.jpg" },
+        { "titulo": "Vinhedos em outono", "url": "https://i.metroimg.com/DJMcLuE7r6Vipbecn9YXCIw_PwGyRJ1YcZsdSsZwawc/w:900/q:85/f:webp/plain/https://images.metroimg.com/2021/04/16131345/Conheca-o-espetaculo-da-folhagem-de-outono-na-Serra-Gaucha.jpeg" },
+        { "titulo": "Cascata do Caracol", "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Caracol_falls_%282_April_2008%29.jpg" }
+      ]
+    },
+    {
+      "id": 7,
+      "nome": "Chapada dos Veadeiros",
+      "estado": "GO",
+      "dificuldade": "Moderada",
+      "altitude": "1.650 m",
+      "distancia": "220 km de Brasília",
+      "duracao": "2 a 5 dias",
+      "melhorEpoca": "Maio a Outubro",
+      "categoria": "Chapada",
+      "descricaoCurta": "Cerrado, cachoeiras e formações de cristal de rocha no coração do Brasil.",
+      "descricaoCompleta": "Patrimônio Natural da Humanidade pela UNESCO, a Chapada dos Veadeiros encanta com seus vales, canyons, cachoeiras e cerrado nativo. A região é conhecida por suas formações cristalinas e energia singular.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Chapada_Veadeiros%2C_Alto_Paraiso_GO_-_40252529604.jpg",
+      "tags": ["cerrado", "chapada", "UNESCO", "cachoeira", "cristal"],
+      "destaque": false,
+      "fotos": [
+        { "titulo": "Vale da Lua", "url": "https://www.guiachapadadosveadeiros.com.br/wp-content/uploads/2019/01/vale-da-lua-chapada-dos-veadeiros.jpg" },
+        { "titulo": "Cachoeira de São Bento", "url": "https://www.guiachapadadosveadeiros.com.br/wp-content/uploads/2019/01/cachoeira-sao-bento.jpg" },
+        { "titulo": "Cânion II", "url": "https://www.guiachapadadosveadeiros.com.br/wp-content/uploads/2019/01/canion-2-chapada-dos-veadeiros.jpg" }
+      ]
+    },
+    {
+      "id": 8,
+      "nome": "Serra do Roncador",
+      "estado": "MT",
+      "dificuldade": "Difícil",
+      "altitude": "800 m",
+      "distancia": "700 km de Cuiabá",
+      "duracao": "4 a 8 dias",
+      "melhorEpoca": "Junho a Agosto",
+      "categoria": "Savana",
+      "descricaoCurta": "Região misteriosa do cerrado mato-grossense com trilhas remotas e selvagens.",
+      "descricaoCompleta": "Uma das regiões mais misteriosas e remotas do Brasil, o Roncador é pouco explorado e repleto de lendas. Suas trilhas exigem experiência e equipamento especializado, mas recompensam com paisagens intocadas do cerrado profundo.",
+      "imagem": " https://upload.wikimedia.org/wikipedia/commons/6/67/Portal_do_Roncador_by_EricoMabellini.jpg",
+      "tags": ["cerrado", "remoto", "aventura", "selvagem", "savana"],
+      "destaque": false,
+      "fotos": [
+        { "titulo": "Cerrado nativo", "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Cerrado2.jpg" },
+        { "titulo": "Rio das Mortes", "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Cerrado2.jpg" },
+        { "titulo": "Formações rochosas", "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Cerrado2.jpg" }
+      ]
+    },
+    {
+      "id": 9,
+      "nome": "Pico do Marins",
+      "estado": "SP",
+      "dificuldade": "Difícil",
+      "altitude": "1.854 m",
+      "distancia": "240 km de São Paulo",
+      "duracao": "1 a 2 dias",
+      "melhorEpoca": "Abril a Novembro",
+      "categoria": "Montanha",
+      "descricaoCurta": "Um dos picos mais desafiadores de São Paulo, com visual de 360° no cume.",
+      "descricaoCompleta": "O Pico do Marins é considerado um dos mais desafiadores do estado de São Paulo. A subida exige preparo físico, mas no cume a vista panorâmica de 360° recompensa cada esforço. Passagem obrigatória para montanhistas.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Marins.JPG",
+      "tags": ["pico", "São Paulo", "montanha", "escalada", "panorama"],
+      "destaque": false,
+      "fotos": [
+        { "titulo": "Cume do Marins", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Pico_do_Marins.jpg/1280px-Pico_do_Marins.jpg" },
+        { "titulo": "Subida pela mata", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Pico_do_Marins.jpg/1280px-Pico_do_Marins.jpg" },
+        { "titulo": "Vista do vale", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Pico_do_Marins.jpg/1280px-Pico_do_Marins.jpg" }
+      ]
+    },
+    {
+      "id": 10,
+      "nome": "Parque Nacional do Caparaó",
+      "estado": "MG / ES",
+      "dificuldade": "Moderada",
+      "altitude": "2.892 m",
+      "distancia": "340 km de BH",
+      "duracao": "2 a 3 dias",
+      "melhorEpoca": "Maio a Setembro",
+      "categoria": "Parque Nacional",
+      "descricaoCurta": "Lar do Pico da Bandeira, com trilhas e campos de altitude deslumbrantes.",
+      "descricaoCompleta": "O Parque Nacional do Caparaó abriga o terceiro pico mais alto do Brasil e oferece trilhas variadas para diferentes níveis. Os campos de altitude e a fauna local encantam todos que visitam a região.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/2/28/Parque_nacional_do_caparao.jpg",
+      "tags": ["parque nacional", "caparaó", "altitude", "fauna", "trilha"],
+      "destaque": true,
+      "fotos": [
+        { "titulo": "Campos de altitude", "url": "https://vemprocaparao.com.br/wp-content/uploads/2022/02/Parque-Nacional-do-Caparao-MG.jpg" },
+        { "titulo": "Nascer do sol no cume", "url": "https://vemprocaparao.com.br/wp-content/uploads/2022/02/Parque-Nacional-do-Caparao-MG.jpg" },
+        { "titulo": "Trilha entre rochas", "url": "https://vemprocaparao.com.br/wp-content/uploads/2022/02/Parque-Nacional-do-Caparao-MG.jpg" }
+      ]
+    },
+    {
+      "id": 11,
+      "nome": "Serra da Canastra",
+      "estado": "MG",
+      "dificuldade": "Fácil",
+      "altitude": "1.496 m",
+      "distancia": "320 km de BH",
+      "duracao": "1 a 3 dias",
+      "melhorEpoca": "Abril a Outubro",
+      "categoria": "Parque Nacional",
+      "descricaoCurta": "Nascente do Rio São Francisco e cachoeiras imponentes no sudoeste mineiro.",
+      "descricaoCompleta": "A Serra da Canastra é berço do Rio São Francisco e lar de uma das cachoeiras mais belas do Brasil, a Casca D'Anta. O parque nacional preserva campos nativos, lobos-guarás e muito mais.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Serra_da_Canastra_MG.jpg",
+      "tags": ["parque nacional", "São Francisco", "cachoeira", "lobo-guará", "campos"],
+      "destaque": false,
+      "fotos": [
+        { "titulo": "Casca D'Anta", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Casca_D%27Anta.jpg/1280px-Casca_D%27Anta.jpg" },
+        { "titulo": "Campos nativos", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Casca_D%27Anta.jpg/1280px-Casca_D%27Anta.jpg" },
+        { "titulo": "Nascente do São Francisco", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Casca_D%27Anta.jpg/1280px-Casca_D%27Anta.jpg" }
+      ]
+    },
+    {
+      "id": 12,
+      "nome": "Pico do Itambé",
+      "estado": "MG",
+      "dificuldade": "Difícil",
+      "altitude": "2.062 m",
+      "distancia": "200 km de BH",
+      "duracao": "1 dia",
+      "melhorEpoca": "Maio a Outubro",
+      "categoria": "Montanha",
+      "descricaoCurta": "O pico mais alto de Minas Gerais, com escalada técnica e vista incrível.",
+      "descricaoCompleta": "O Pico do Itambé é o ponto mais alto do estado de Minas Gerais. A trilha exige experiência em escalada técnica, mas a vista do topo é uma recompensa à altura. Fica na região serrana próxima ao Parque Estadual do Biribiri.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Pico_itambe_01.JPG",
+      "tags": ["pico", "Minas Gerais", "escalada", "técnica", "cume"],
+      "destaque": false,
+      "fotos": [
+        { "titulo": "Pico do Itambé", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Pico_do_Itamb%C3%A9_MG.jpg/1280px-Pico_do_Itamb%C3%A9_MG.jpg" },
+        { "titulo": "Vista da trilha", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Pico_do_Itamb%C3%A9_MG.jpg/1280px-Pico_do_Itamb%C3%A9_MG.jpg" },
+        { "titulo": "Formações rochosas", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Pico_do_Itamb%C3%A9_MG.jpg/1280px-Pico_do_Itamb%C3%A9_MG.jpg" }
+      ]
+    }
+  ],
+
+  "categorias": [
+    { "id": 1, "nome": "Montanha", "descricao": "Trilhas em picos e serras elevadas", "icone": "⛰️" },
+    { "id": 2, "nome": "Parque Nacional", "descricao": "Áreas de preservação ambiental federal", "icone": "🌿" },
+    { "id": 3, "nome": "Chapada", "descricao": "Planaltos, chapadões e formações rochosas", "icone": "🏔️" },
+    { "id": 4, "nome": "Litoral", "descricao": "Serras próximas ao mar com Mata Atlântica", "icone": "🌊" },
+    { "id": 5, "nome": "Vale", "descricao": "Vales e regiões com vinhedos e gastronomia", "icone": "🍇" },
+    { "id": 6, "nome": "Savana", "descricao": "Cerrado e savanas tropicais brasileiras", "icone": "🌾" }
+  ],
+
+  "avaliacoes": [
+    { "id": 1, "destinoId": 1, "nota": 5, "comentario": "Vista incrível, trilha bem sinalizada.", "autor": "Mariana S." },
+    { "id": 2, "destinoId": 1, "nota": 4, "comentario": "Ótima experiência, mas exige preparo.", "autor": "Carlos R." },
+    { "id": 3, "destinoId": 2, "nota": 5, "comentario": "O cume compensa cada esforço!", "autor": "Fernanda T." },
+    { "id": 4, "destinoId": 4, "nota": 5, "comentario": "Perfeito para iniciantes. Família adorou.", "autor": "João P." },
+    { "id": 5, "destinoId": 5, "nota": 5, "comentario": "Chapada Diamantina é simplesmente mágica.", "autor": "Beatriz L." }
+  ],
+
+  "favoritos": [
+    { "id": 1, "destinoId": 1 },
+    { "id": 2, "destinoId": 4 },
+    { "id": 3, "destinoId": 5 }
+  ]
+}

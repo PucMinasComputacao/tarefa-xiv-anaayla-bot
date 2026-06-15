@@ -32,14 +32,16 @@ Mapa com localização dos eventos: Especialmente útil se os eventos forem em d
 
 ## Informações Gerais
 
-- Nome:
-- Matricula:
+- Nome: Ana Ayla Pires Reis 
+- Matricula: 919036
 
 ## Prints do trabalho
 
 <<  COLOQUE A IMAGEM - TELA DE CARDS DE PRODUTOS - AQUI >>
+![Tela de cards](Imagens/cards.png) 
 
 <<  COLOQUE A IMAGEM - TELA DE DETALHE DO PRODUTO - AQUI >>
+![Tela de produto](Imagens/produto.png)
 
 <<  COLOQUE A IMAGEM - TELA DO CONSOLE - AQUI >>
-
+![console](imagens/console.png)
