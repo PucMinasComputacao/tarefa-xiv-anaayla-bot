@@ -44,4 +44,4 @@ Mapa com localização dos eventos: Especialmente útil se os eventos forem em d
 ![Tela de produto](Imagens/produto.png)
 
 <<  COLOQUE A IMAGEM - TELA DO CONSOLE - AQUI >>
-![console](imagens/console.png)
+![console](Imagens/console.png)
